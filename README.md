@@ -236,36 +236,3 @@ namespace ProjektiX
     } 
 
 } 
-
-
-
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace projektiX
-{
-    public class Laskin
-    {
-        public void PlusL(double x, double y)
-        {
-            Console.WriteLine(x + y);
-        }
-        public void MiinusL(double x, double y)
-        {
-            Console.WriteLine(x - y);
-        }
-        public void KertL(double x, double y)
-        {
-            Console.WriteLine(x * y);
-        }
-        public void JakoL(double x, double y)
-        {
-            Console.WriteLine(x / y);
-        }
-        public void NeliJ(double z)
-        {
-            Console.WriteLine(Math.Sqrt(z));
-        }
-    }
-}

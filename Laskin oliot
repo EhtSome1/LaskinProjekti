@@ -1,6 +1,6 @@
 using System;
-using System.Collections.Generic; 
-using System.Text; 
+using System.Collections.Generic;
+using System.Text;
 
 namespace projektiX
 {
@@ -10,36 +10,43 @@ namespace projektiX
         {
             Console.WriteLine("Vastaukseksi tuli: ");
             Console.WriteLine(x + y);
+            Console.WriteLine("------");
         }
         public void MiinusL(double x, double y)
         {
             Console.WriteLine("Vastaukseksi tuli: ");
             Console.WriteLine(x - y);
+            Console.WriteLine("------");
         }
         public void KertL(double x, double y)
         {
             Console.WriteLine("Vastaukseksi tuli: ");
             Console.WriteLine(x * y);
+            Console.WriteLine("------");
         }
         public void JakoL(double x, double y)
         {
             Console.WriteLine("Vastaukseksi tuli: ");
             Console.WriteLine(x / y);
+            Console.WriteLine("------");
         }
         public void NeliJ(double z)
         {
             Console.WriteLine("Vastaukseksi tuli: ");
             Console.WriteLine(Math.Sqrt(z));
+            Console.WriteLine("------");
         }
-        public void NeliA(double x, double y)
+        /*public void NeliA(double x, double y)
         {
             Console.WriteLine("Vastaukseksi tuli: ");
             Console.WriteLine(x * y);
-        }
+            Console.WriteLine("------");
+        }*/
         public void SuorKolmiA(double x, double y)
         {
             Console.WriteLine("Vastaukseksi tuli: ");
             Console.WriteLine((x * y) / 2);
+            Console.WriteLine("------");
         }
     }
 }

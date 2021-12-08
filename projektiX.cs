@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 
 namespace ProjektiX
 {
@@ -9,8 +10,17 @@ namespace ProjektiX
             int o = 0;
             do
             {
-                Console.WriteLine("Hei! Haluatko että lasken laskun puolestasi? 1 - Kyllä       2 - Ei");
+                Console.WriteLine("Hei! Haluatko että lasken laskun puolestasi?");
+                Console.WriteLine("(Kirjoita numero)");
+                Console.WriteLine("1 - Kyllä");
+                Console.WriteLine("2 - Ei");
+                Console.WriteLine("---------");
                 o = Convert.ToInt32(Console.ReadLine());
+                if (o == 2)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Ei sitten :(");
+                }
                 if (o < 1 || o > 2)
                 {
                     Console.WriteLine("Väärä vastaus!");
@@ -18,7 +28,7 @@ namespace ProjektiX
                 }
             }
             while (o == 0);
-
+            projektiX.Laskin olio3 = new projektiX.Laskin();
             int kvast = 0;
             int vast = 0;
             int c = 0;
@@ -39,66 +49,114 @@ namespace ProjektiX
                     Console.WriteLine("6 - Pinta-ala");
                     Console.WriteLine("---------------");
                     vast = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
                     switch (vast)
                     {
                         case 1:
-
+                            //Pluslasku
                             Console.WriteLine("Anna 2 laskettavaa numeroa:");
                             x = Convert.ToDouble(Console.ReadLine());
                             y = Convert.ToDouble(Console.ReadLine());
+                            Console.Beep(800, 200);
+                            Thread.Sleep(500);
+                            Console.Beep(800, 200);
+                            Thread.Sleep(500);
+                            Console.Beep(800, 200);
                             projektiX.Laskin olio1 = new projektiX.Laskin();
                             olio1.PlusL(x, y);
                             break;
 
                         case 2:
+                            //Miinuslasku
                             Console.WriteLine("Anna 2 laskettavaa numeroa:");
                             x = Convert.ToDouble(Console.ReadLine());
                             y = Convert.ToDouble(Console.ReadLine());
+                            Console.Beep(800, 200);
+                            Thread.Sleep(500);
+                            Console.Beep(800, 200);
+                            Thread.Sleep(500);
+                            Console.Beep(800, 200);
                             projektiX.Laskin olio2 = new projektiX.Laskin();
                             olio2.MiinusL(x, y);
                             break;
 
                         case 3:
+                            //Kertolasku
                             Console.WriteLine("Anna kerrottava ja kertoja:");
                             x = Convert.ToDouble(Console.ReadLine());
                             y = Convert.ToDouble(Console.ReadLine());
-                            projektiX.Laskin olio3 = new projektiX.Laskin();
+                            Console.Beep(800, 200);
+                            Thread.Sleep(500);
+                            Console.Beep(800, 200);
+                            Thread.Sleep(500);
+                            Console.Beep(800, 200);
+                            
                             olio3.KertL(x, y);
                             break;
 
                         case 4:
+                            //Jakolasku
                             Console.WriteLine("Anna jaettava ja jakaja:");
                             x = Convert.ToDouble(Console.ReadLine());
                             y = Convert.ToDouble(Console.ReadLine());
+                            Console.Beep(800, 200);
+                            Thread.Sleep(500);
+                            Console.Beep(800, 200);
+                            Thread.Sleep(500);
+                            Console.Beep(800, 200);
                             projektiX.Laskin olio4 = new projektiX.Laskin();
                             olio4.JakoL(x, y);
                             break;
 
                         case 5:
+                            //Neliöjuuri
                             Console.WriteLine("Anna laskettava numero");
                             z = Convert.ToDouble(Console.ReadLine());
+                            Console.Beep(800, 200);
+                            Thread.Sleep(500);
+                            Console.Beep(800, 200);
+                            Thread.Sleep(500);
+                            Console.Beep(800, 200);
                             projektiX.Laskin olio5 = new projektiX.Laskin();
                             olio5.NeliJ(z);
                             break;
 
                         case 6:
-                            Console.WriteLine("Minkä kuvion pinta-ala?       1 - Neliö/Suorakulmio       2 - Suorakulmainen kolmio");
+                            //Pinta-ala
+                            Console.WriteLine("Minkä kuvion pinta-ala?");
+                            Console.WriteLine("1 - Neliö/Suorakulmio");
+                            Console.WriteLine("2 - Suorakulmainen kolmio");
+                            Console.WriteLine("-------------------------");
                             kvast = Convert.ToInt32(Console.ReadLine());
                             do
                                 switch (kvast)
                                 {
                                     case 1:
+                                        //Neliö/Suorakulmio
                                         Console.WriteLine("Anna kanta ja korkeus");
                                         x = Convert.ToDouble(Console.ReadLine());
                                         y = Convert.ToDouble(Console.ReadLine());
-                                        projektiX.Laskin olio6 = new projektiX.Laskin();
-                                        olio6.NeliA(x, y);
+                                        Console.Beep(800, 200);
+                                        Thread.Sleep(500);
+                                        Console.Beep(800, 200);
+                                        Thread.Sleep(500);
+                                        Console.Beep(800, 200);
+                                        //projektiX.Laskin olio6 = new projektiX.Laskin();
+                                        //olio6.NeliA(x, y);
+                                        Console.WriteLine("kutsutaan KertL");
+                                        olio3.KertL(x, y);
                                         break;
 
                                     case 2:
+                                        //Suorakulmainen kolmio
                                         Console.WriteLine("Anna kanta ja korkeus");
                                         x = Convert.ToDouble(Console.ReadLine());
                                         y = Convert.ToDouble(Console.ReadLine());
+                                        Console.Beep(800, 200);
+                                        Thread.Sleep(500);
+                                        Console.Beep(800, 200);
+                                        Thread.Sleep(500);
+                                        Console.Beep(800, 200);
                                         projektiX.Laskin olio7 = new projektiX.Laskin();
                                         olio7.SuorKolmiA(x, y);
                                         break;

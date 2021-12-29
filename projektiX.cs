@@ -8,6 +8,7 @@ namespace ProjektiX
         static void Main(string[] args)
         {
             int o = 0;
+            int kysym;
             do
             {
                 Console.WriteLine("Hei! Haluatko että lasken laskun puolestasi?");
@@ -28,18 +29,21 @@ namespace ProjektiX
                 }
             }
             while (o == 0);
+            Console.WriteLine("Kuinka monta laskua lasken?");
+            kysym = Convert.ToInt32(Console.ReadLine());
             projektiX.Laskin olio3 = new projektiX.Laskin();
             int kvast = 0;
             int vast = 0;
             int c = 0;
             int taulukkonum = 0;
+            int taulukkonumm = 2;
             int laskuvast;
             double x;
             double y;
             double z;
             double vastaus = 0;
-            string[] laskut = {"a" };
-            if (o == 1)
+            string[] laskut = new string[kysym];
+            for (int i = 0; i < kysym; i++)
             {
                 Console.Clear();
                 do
@@ -70,8 +74,7 @@ namespace ProjektiX
                             projektiX.Laskin olio1 = new projektiX.Laskin();
                             olio1.PlusL(x, y);
                             vastaus = x + y;
-                            laskut[taulukkonum] = taulukkonum + 1 + ". " + x + " + " + y;
-                            laskut[taulukkonum + 1] = "vastaus:" + vastaus;
+                            laskut[taulukkonum] = "Pluslasku " + x + " + " + y + " = " + vastaus;
                             break;
 
                         case 2:
@@ -87,6 +90,8 @@ namespace ProjektiX
                             Console.Beep(800, 200);
                             projektiX.Laskin olio2 = new projektiX.Laskin();
                             olio2.MiinusL(x, y);
+                            vastaus = x - y;
+                            laskut[taulukkonum] = "Miinuslasku " + x + " - " + y + " = " + vastaus;
                             break;
 
                         case 3:
@@ -101,6 +106,8 @@ namespace ProjektiX
                             Thread.Sleep(500);
                             Console.Beep(800, 200);
                             olio3.KertL(x, y);
+                            vastaus = x * y;
+                            laskut[taulukkonum] = "Kertolasku " + x + " * " + y + " = " + vastaus;
                             break;
 
                         case 4:
@@ -116,7 +123,10 @@ namespace ProjektiX
                             Console.Beep(800, 200);
                             projektiX.Laskin olio4 = new projektiX.Laskin();
                             olio4.JakoL(x, y);
+                            vastaus = x / y;
+                            laskut[taulukkonum] = "Jakolaskulasku " + x + " / " + y + " = " + vastaus;
                             break;
+                            
 
                         case 5:
                             //Neliöjuuri
@@ -129,6 +139,8 @@ namespace ProjektiX
                             Console.Beep(800, 200);
                             projektiX.Laskin olio5 = new projektiX.Laskin();
                             olio5.NeliJ(z);
+                            vastaus = Math.Sqrt(z);
+                            laskut[taulukkonum] = "Neliöjuuri " + z + " = " + vastaus;
                             break;
 
                         case 6:
@@ -138,6 +150,7 @@ namespace ProjektiX
                             Console.WriteLine("2 - Suorakulmainen kolmio");
                             Console.WriteLine("-------------------------");
                             kvast = Convert.ToInt32(Console.ReadLine());
+                            Console.Clear();
                             do
                                 switch (kvast)
                                 {
@@ -154,8 +167,9 @@ namespace ProjektiX
                                         Console.Beep(800, 200);
                                         //projektiX.Laskin olio6 = new projektiX.Laskin();
                                         //olio6.NeliA(x, y);
-                                        Console.WriteLine("kutsutaan KertL");
                                         olio3.KertL(x, y);
+                                        vastaus = x * y;
+                                        laskut[taulukkonum] = "Neliö/suorakulmio pinta-ala " + x + " * " + y + " = " + vastaus;
                                         break;
 
                                     case 2:
@@ -174,6 +188,8 @@ namespace ProjektiX
                                         Console.Beep(800, 200);
                                         projektiX.Laskin olio7 = new projektiX.Laskin();
                                         olio7.SuorKolmiA(x, y);
+                                        vastaus = (x * y) / 2;
+                                        laskut[taulukkonum] = "Suorakulmainen kolimo pinta-ala " + "(" + x + " * " + y + ")" + " / 2" + " = " + vastaus;
                                         break;
 
                                     default:
@@ -189,7 +205,10 @@ namespace ProjektiX
                             vast = vast - vast;
                             break;
                     }
+                    taulukkonumm++;
                     taulukkonum++;
+                    Thread.Sleep(2000);
+                    Console.Clear();
                     do
                     {
                         Console.WriteLine("Haluatko nähdä lasketut laskut");
@@ -197,16 +216,27 @@ namespace ProjektiX
                         Console.WriteLine("2 - Ei");
                         Console.WriteLine("---------");
                         laskuvast = Convert.ToInt32(Console.ReadLine());
-                        if (laskuvast == 1) ;
+                        Console.Clear();
+                        if (laskuvast == 1)
                         {
-                            foreach (string i in laskut)
+                            foreach (string m in laskut)
                             {
-                                Console.WriteLine(i);
+                                Console.WriteLine(m);
                             }
                         }
+                        if (laskuvast == 2)
+                        {
+                            Console.WriteLine("Ei sitten");
+                            Console.Clear();
+                        }
+                        if (laskuvast < 1 || laskuvast > 2)
+                        {
+                            Console.WriteLine("Väärä vastaus!");
+                            laskuvast = laskuvast - laskuvast;
+                        }
                     }
-                    while (c == 0);
-                    do
+                    while (laskuvast == 0);
+                    /*do
                     {
                         if (c == 0)
                         {
@@ -223,13 +253,14 @@ namespace ProjektiX
                         {
                             Console.WriteLine("Ei sitten. :(");
                         }
-                        else
+                        if (c <= 0 || c >= 3)
                         {
                             Console.WriteLine("Väärä vastaus");
                             c = c - c;
                         }
                     }
                     while (c == 0);
+                    */
                 }
                 while (vast == 0);
             }

@@ -55,6 +55,7 @@ namespace ProjektiX
                     Console.WriteLine("4 - Jakolasku");
                     Console.WriteLine("5 - Neliöjuuri");
                     Console.WriteLine("6 - Pinta-ala");
+                    Console.WriteLine("7 - Prosenttilasku");
                     Console.WriteLine("---------------");
                     vast = Convert.ToInt32(Console.ReadLine());
                     Console.Clear();
@@ -79,7 +80,7 @@ namespace ProjektiX
 
                         case 2:
                             //Miinuslasku
-                            Console.WriteLine("Anna 2 laskettavaa numeroa:");
+                            Console.WriteLine("Anna 2 laskettavaa lukua:");
                             x = Convert.ToDouble(Console.ReadLine());
                             Console.WriteLine("-");
                             y = Convert.ToDouble(Console.ReadLine());
@@ -130,7 +131,7 @@ namespace ProjektiX
 
                         case 5:
                             //Neliöjuuri
-                            Console.WriteLine("Anna laskettava numero");
+                            Console.WriteLine("Anna laskettava luku:");
                             z = Convert.ToDouble(Console.ReadLine());
                             Console.Beep(800, 200);
                             Thread.Sleep(500);
@@ -156,7 +157,7 @@ namespace ProjektiX
                                 {
                                     case 1:
                                         //Neliö/Suorakulmio
-                                        Console.WriteLine("Anna kanta ja korkeus");
+                                        Console.WriteLine("Anna kanta ja korkeus:");
                                         x = Convert.ToDouble(Console.ReadLine());
                                         Console.WriteLine("*");
                                         y = Convert.ToDouble(Console.ReadLine());
@@ -174,7 +175,7 @@ namespace ProjektiX
 
                                     case 2:
                                         //Suorakulmainen kolmio
-                                        Console.WriteLine("Anna kanta ja korkeus");
+                                        Console.WriteLine("Anna kanta ja korkeus:");
                                         Console.WriteLine("(");
                                         x = Convert.ToDouble(Console.ReadLine());
                                         Console.WriteLine("*");
@@ -198,6 +199,22 @@ namespace ProjektiX
                                         break;
                                 }
                             while (kvast == 0);
+                            break;
+
+                        case 7:
+                            Console.WriteLine("Anna prosentti ja laskettava luku");
+                            x = Convert.ToDouble(Console.ReadLine());
+                            y = Convert.ToDouble(Console.ReadLine());
+                            x = x / 100;
+                            Console.Beep(800, 200);
+                            Thread.Sleep(500);
+                            Console.Beep(800, 200);
+                            Thread.Sleep(500);
+                            Console.Beep(800, 200);
+                            projektiX.Laskin olio8 = new projektiX.Laskin();
+                            olio8.ProsenttiL(x, y);
+                            vastaus = x * y;
+                            laskut[taulukkonum] = "Prosenttilasku" + (x * 100) + "%" + " * " + y + " = " + vastaus;
                             break;
 
                         default:

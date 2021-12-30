@@ -48,5 +48,11 @@ namespace projektiX
             Console.WriteLine((x * y) / 2);
             Console.WriteLine("------");
         }
+        public void ProsenttiL(double x, double y)
+        {
+            Console.WriteLine("Vastaukseksi tuli: ");
+            Console.WriteLine(x * y);
+            Console.WriteLine("------");
+        }
     }
 }

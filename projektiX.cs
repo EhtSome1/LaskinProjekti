@@ -8,7 +8,7 @@ namespace ProjektiX
         static void Main(string[] args)
         {
             int o = 0;
-            int kysym;
+            //int kysym;
             do
             {
                 Console.WriteLine("Hei! Haluatko että lasken laskun puolestasi?");
@@ -29,8 +29,6 @@ namespace ProjektiX
                 }
             }
             while (o == 0);
-            Console.WriteLine("Kuinka monta laskua lasken?");
-            kysym = Convert.ToInt32(Console.ReadLine());
             projektiX.Laskin olio3 = new projektiX.Laskin();
             int kvast = 0;
             int vast = 0;
@@ -42,9 +40,7 @@ namespace ProjektiX
             double y;
             double z;
             double vastaus = 0;
-            string[] laskut = new string[kysym];
-            for (int i = 0; i < kysym; i++)
-            {
+
                 Console.Clear();
                 do
                 {
@@ -58,7 +54,11 @@ namespace ProjektiX
                     Console.WriteLine("7 - Prosenttilasku");
                     Console.WriteLine("---------------");
                     vast = Convert.ToInt32(Console.ReadLine());
-                    Console.Clear();
+
+                    string[] laskut = new string[taulukkonumm];
+                    c = c - c;
+                Console.Clear();
+
                     switch (vast)
                     {
                         case 1:
@@ -127,7 +127,7 @@ namespace ProjektiX
                             vastaus = x / y;
                             laskut[taulukkonum] = "Jakolaskulasku " + x + " / " + y + " = " + vastaus;
                             break;
-                            
+
 
                         case 5:
                             //Neliöjuuri
@@ -222,8 +222,7 @@ namespace ProjektiX
                             vast = vast - vast;
                             break;
                     }
-                    taulukkonumm++;
-                    taulukkonum++;
+                    
                     Thread.Sleep(2000);
                     Console.Clear();
                     do
@@ -253,10 +252,15 @@ namespace ProjektiX
                         }
                     }
                     while (laskuvast == 0);
-                    /*do
+                    do
                     {
+                        if (laskuvast ==1)
+                        {
+                        Console.WriteLine("-----------");
+                        }
                         if (c == 0)
                         {
+                        
                             Console.WriteLine("Jatketaanko laskemista? 1 - kyllä        2 - ei");
                             c = Convert.ToInt32(Console.ReadLine());
                         }
@@ -264,7 +268,6 @@ namespace ProjektiX
                         {
                             vast = vast - vast;
                             Console.Clear();
-
                         }
                         if (c == 2)
                         {
@@ -277,10 +280,10 @@ namespace ProjektiX
                         }
                     }
                     while (c == 0);
-                    */
+                taulukkonumm++;
+                taulukkonum++;
                 }
-                while (vast == 0);
-            }
+            while (vast == 0);
         }
     }
 }

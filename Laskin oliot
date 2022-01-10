@@ -54,5 +54,21 @@ namespace projektiX
             Console.WriteLine(x * y);
             Console.WriteLine("------");
         }
+        public void beep()
+        {
+            Console.Beep(800, 200);
+            Thread.Sleep(500);
+            Console.Beep(800, 200);
+            Thread.Sleep(500);
+            Console.Beep(800, 200);
+        }
+        public void tyhjennysBeep()
+        {
+            Console.Beep(800, 200);
+            Thread.Sleep(200);
+            Console.Beep(200, 1000);
+            Thread.Sleep(200);
+            Console.Beep(1000, 200);
+        }
     }
 }
